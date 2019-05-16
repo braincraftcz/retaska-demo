@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Děkujeme!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>Děkujeme!</h1>
+</div>
+
+{# Tímto způsobem vykreslíte obrázek z internetu: #}
+<img src="https://t.aimg.sk/magaziny/Gren8hUsQGb3EG5Evsf6YQ.jpg?t=LzgwMHgwL3NtYXJ0&h=Li6CEyFWMFRrdluoH7pXQw&e=2145916800&v=1">
+
+{# Tímto způsobem vykreslíte obrázek, který je ve složce public #}
+<img src="{{ asset('taska.jpg') }}">
+
+{% endblock %}

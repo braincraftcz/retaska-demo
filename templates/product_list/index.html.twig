@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Výpis produktů{% endblock %}
+
+{% block body %}
+
+    <h1>Produkty:</h1>
+    <ul>
+    {% for product in products %}
+        <li>
+            {# Odkaz na detail produktu: #}
+            <a href="{{ path('product', {'id': product.id}) }}">{{ product.name }}</a><br>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

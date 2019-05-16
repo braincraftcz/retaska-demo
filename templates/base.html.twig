@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Re-taška{% endblock %}</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://getbootstrap.com/docs/4.1/examples/sticky-footer-navbar/sticky-footer-navbar.css">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+
+    <body>
+
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                <a class="navbar-brand justify-content-between" href="{{ path('homepage') }}">Re-taška</a>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ path('homepage') }}">Výpis produktů</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ path('basket') }}">Košík</a>
+                        </li>
+                    </ul>
+                </div>
+                <form class="form-inline" action="{{ path('product_list_search') }}">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Vyhledat produkt..." aria-label="Search" name="search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Vyhledat</button>
+                </form>
+            </nav>
+        </header>
+
+        <main role="main" class="container">
+            <br>
+            {% block body %}{% endblock %}
+        </main>
+
+        <footer class="footer">
+            <div class="container text-center">
+                    <span class="text-muted">
+                        {#<a href="{{ path('homepage') }}">Hlavní strana</a>|#}
+                        © Re-taška 2018 | 777 000 000 | info@retaska.cz
+                        {#| <a href="{{ path('admin_index') }}" class="text-muted">Administrace</a>#}
+                    </span>
+            </div>
+        </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

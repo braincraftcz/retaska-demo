@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Objednávka{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>Objednávka</h1>
+
+    <p>Produkty:</p>
+
+    {# Výpis produktů, pouze ke čtení #}
+    {% for product in products %}
+        {{ product.name }} - {{ product.amount }}x<br>
+    {% endfor %}
+
+    {{ include('order/_form.html.twig', {'button_label': 'Objednat'}) }}
+</div>
+{% endblock %}

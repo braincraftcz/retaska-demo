@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detail produktu{% endblock %}
+
+{% block body %}
+
+    <h1>{{ product.name }}</h1>
+    <p>Cena: {{ product.price }} Kč</p>
+
+    {# Odkaz na vložení produktu do košíku #}
+    <a href="{{ path('basket_add', {'id': product.id}) }}" class="btn btn-primary">
+        Vložit do košíku
+    </a>
+
+{% endblock %}

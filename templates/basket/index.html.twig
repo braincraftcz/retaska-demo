@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block body %}
+
+    <h1>Košík</h1>
+
+    {# Procházím produkty v košíku #}
+    {% for product in basket %}
+
+        {# Název produktu a počet v košíku: #}
+        {{ product.name }}: {{ product.amount }}x
+
+        {# Tlačítko zvýšení počtu produktů v košíku: #}
+        <a href="{{ path('basket_change_amount', {'id': product.id, 'mode': 1}) }}" class="btn btn-primary">
+            +
+        </a>
+
+        {# Tlačítko zvýšení počtu produktů v košíku: #}
+        <a href="{{ path('basket_change_amount', {'id': product.id, 'mode': 0}) }}" class="btn btn-primary">
+            -
+        </a>
+
+        <br>
+    {% endfor %}
+
+    <br>
+
+    <a href="{{ path('order') }}" class="btn btn-primary">
+        Pokračovat na výběr dopravy a platby
+    </a>
+
+{% endblock %}
